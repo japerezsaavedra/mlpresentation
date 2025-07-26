@@ -1,0 +1,37 @@
+# Archivos del sistema
+.DS_Store
+Thumbs.db
+
+# Archivos temporales de R
+.Rhistory
+.RData
+.Ruserdata
+*.Rproj
+*.Rprofile
+
+# Archivos de salida de R
+Rplots.pdf
+*.pdf
+*.ps
+
+# Archivos de datos temporales
+*.csv
+*.txt
+*.dat
+
+# Archivos de respaldo
+*~
+*.bak
+*.tmp
+
+# Logs
+*.log
+
+# Directorios temporales
+temp/
+tmp/
+cache/
+
+# Archivos de configuración local
+.env
+config.local.* 

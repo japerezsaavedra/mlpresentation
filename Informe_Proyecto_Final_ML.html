@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Descubriendo el Mundo de las Flores con ML 🌸</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Modal styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.9);
+        }
+        
+        .modal-content {
+            margin: auto;
+            display: block;
+            width: 90%;
+            max-width: 800px;
+            max-height: 90%;
+            object-fit: contain;
+        }
+        
+        .close {
+            position: absolute;
+            top: 15px;
+            right: 35px;
+            color: #f1f1f1;
+            font-size: 40px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        
+        .close:hover {
+            color: #bbb;
+        }
+        
+        .analysis-image {
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+        
+        .analysis-image:hover {
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+            <div class="hero-section">
+            <img src="portada.png" alt="Portada del proyecto" class="hero-image">
+            <div class="hero-overlay">
+                <button class="scroll-down-btn" onclick="scrollToContent()">
+                    <span class="scroll-text">Descubrir el informe</span>
+                    <span class="scroll-arrow">↓</span>
+                </button>
+            </div>
+        </div>
+
+    <div class="container" id="content-start">
+
+        <div class="welcome-section">
+            <p>¡Bienvenido! En este informe vamos a explorar juntos cómo la inteligencia artificial puede ayudarnos a conocer mejor las flores del famoso dataset IRIS. No necesitas ser experto en estadística: aquí te explico todo paso a paso, con ejemplos y comparaciones sencillas. ¡Vamos allá!</p>
+        </div>
+
+        <h2>1. ¿Qué datos tenemos? 📊</h2>
+
+        <div class="info">
+            <p>El dataset IRIS contiene información de <strong>150 flores</strong>, de tres especies diferentes. Para cada flor, medimos:</p>
+            <ul>
+                <li>🌿 <strong>Largo y ancho del sépalo</strong> (la parte verde que protege la flor)</li>
+                <li>🌸 <strong>Largo y ancho del pétalo</strong> (la parte colorida)</li>
+            </ul>
+        </div>
+
+        <div class="highlight">
+            <h3>¿Cómo se ven los datos?</h3>
+            <ul>
+                <li>El largo del sépalo va de <strong>4.3 a 7.9 cm</strong> (en promedio, 5.84 cm)</li>
+                <li>El ancho del sépalo va de <strong>2.0 a 4.4 cm</strong> (en promedio, 3.06 cm)</li>
+                <li>El largo del pétalo va de <strong>1.0 a 6.9 cm</strong> (en promedio, 3.76 cm)</li>
+                <li>El ancho del pétalo va de <strong>0.1 a 2.5 cm</strong> (en promedio, 1.20 cm)</li>
+            </ul>
+        </div>
+
+        <div class="success">
+            <h3>¿Y las especies?</h3>
+            <p>Hay <strong>50 flores de cada especie</strong>: setosa, versicolor y virginica. ¡Perfectamente balanceado!</p>
+        </div>
+
+        <h3>Resumen estadístico de las variables</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Variable</th>
+                    <th>Mínimo</th>
+                    <th>1er Cuartil</th>
+                    <th>Mediana</th>
+                    <th>Media</th>
+                    <th>3er Cuartil</th>
+                    <th>Máximo</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Largo del Sépalo</strong></td>
+                    <td>4.3 cm</td>
+                    <td>5.1 cm</td>
+                    <td>5.8 cm</td>
+                    <td>5.84 cm</td>
+                    <td>6.4 cm</td>
+                    <td>7.9 cm</td>
+                </tr>
+                <tr>
+                    <td><strong>Ancho del Sépalo</strong></td>
+                    <td>2.0 cm</td>
+                    <td>2.8 cm</td>
+                    <td>3.0 cm</td>
+                    <td>3.06 cm</td>
+                    <td>3.3 cm</td>
+                    <td>4.4 cm</td>
+                </tr>
+                <tr>
+                    <td><strong>Largo del Pétalo</strong></td>
+                    <td>1.0 cm</td>
+                    <td>1.6 cm</td>
+                    <td>4.35 cm</td>
+                    <td>3.76 cm</td>
+                    <td>5.1 cm</td>
+                    <td>6.9 cm</td>
+                </tr>
+                <tr>
+                    <td><strong>Ancho del Pétalo</strong></td>
+                    <td>0.1 cm</td>
+                    <td>0.3 cm</td>
+                    <td>1.3 cm</td>
+                    <td>1.20 cm</td>
+                    <td>1.8 cm</td>
+                    <td>2.5 cm</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="data-visualization-container">
+            <img src="flores.png" alt="Hermosas flores iris del dataset" class="data-visualization-image" onclick="openModal(this.src, this.alt)">
+            <p class="image-caption">🌸 Así se ven las hermosas flores iris que estamos estudiando (Haz clic para ampliar)</p>
+        </div>
+
+        <div class="image-container">
+            <img src="boxplot_variables.png" alt="Boxplot de Variables" class="analysis-image" onclick="openModal(this.src, this.alt)">
+            <p class="image-caption">📊 Figura 1: ¿Cómo se distribuyen las medidas de las flores? Cada "caja" nos muestra dónde están la mayoría de los valores. (Haz clic para ampliar)</p>
+        </div>
+
+        <h2>2. ¿Qué relación hay entre las medidas? 🔗</h2>
+
+        <div class="info">
+            <p>A veces, cuando una flor tiene pétalos largos, también tiene pétalos anchos. Eso se llama <strong>"correlación"</strong>. En nuestro caso:</p>
+            <ul>
+                <li>El largo y ancho del pétalo están <strong>muy relacionados</strong></li>
+                <li>El largo del sépalo también se relaciona bastante con el largo y ancho del pétalo</li>
+                <li>El ancho del sépalo es un poco más <strong>independiente</strong></li>
+            </ul>
+        </div>
+
+        <div class="highlight">
+            <h3>¿Qué significa esto?</h3>
+            <p>Si conocemos el largo del pétalo, probablemente también sepamos si es ancho o no. ¡Las flores tienen sus secretos!</p>
+        </div>
+
+        <div class="image-container">
+            <img src="matriz_correlacion.png" alt="Matriz de Correlación" class="analysis-image" onclick="openModal(this.src, this.alt)">
+            <p class="image-caption">🔗 Figura 2: Matriz de correlación - Los colores más intensos indican mayor relación entre variables (Haz clic para ampliar)</p>
+        </div>
+
+        <h2>3. ¿Podemos resumir la información? (PCA) 🧩</h2>
+
+        <div class="info">
+            <p>A veces, hay tanta información que es mejor resumirla. Usamos una técnica llamada <strong>PCA</strong> (Análisis de Componentes Principales) que nos ayuda a ver qué medidas son las más importantes.</p>
+            <ul>
+                <li>Descubrimos que el <strong>largo y ancho del pétalo</strong> son las estrellas del show: explican la mayor parte de las diferencias entre flores</li>
+            </ul>
+        </div>
+
+        <div class="image-container">
+            <img src="screeplot_pca.png" alt="Screeplot PCA" class="analysis-image" onclick="openModal(this.src, this.alt)">
+            <p class="image-caption">🧩 Figura 3: Screeplot PCA - ¿Cuánta información captura cada componente? (Haz clic para ampliar)</p>
+        </div>
+
+        <h2>4. ¿Podemos agrupar o predecir la especie de una flor? 🤖</h2>
+
+        <div class="info">
+            <p>Probamos varios modelos de Machine Learning. Aquí te cuento cómo les fue, usando ejemplos sencillos:</p>
+        </div>
+
+        <h3>a) K-means (Agrupamiento sin saber la especie)</h3>
+        <div class="warning">
+            <ul>
+                <li>Imagina que tienes que agrupar las flores solo mirando sus medidas, sin saber la especie</li>
+                <li>El modelo acertó el <strong>44.00%</strong> de las veces cuando comparamos con las especies reales</li>
+            </ul>
+        </div>
+
+        <div class="info">
+            <h4>¿Por qué 83.33% de accuracy?</h4>
+            <p>El K-means agrupa las flores por similitud física, no por especie. Para calcular el accuracy:</p>
+            <ol>
+                <li><strong>K-means encuentra 3 grupos</strong> basándose solo en las medidas (largo/ancho de sépalos y pétalos)</li>
+                <li><strong>Mapeamos cada cluster a la especie más frecuente</strong> en ese grupo</li>
+                <li><strong>Calculamos cuántas flores</strong> fueron clasificadas correctamente según este mapeo</li>
+            </ol>
+            
+            <div class="highlight">
+                <h5>Resultado del código base:</h5>
+                <ul>
+                    <li><strong>Cluster 1:</strong> 50 setosas (100% correctas) - Las setosas son muy fáciles de identificar</li>
+                    <li><strong>Cluster 2:</strong> 39 versicolor + 14 virginica (39/53 = 74% correctas)</li>
+                    <li><strong>Cluster 3:</strong> 11 versicolor + 36 virginica (36/47 = 77% correctas)</li>
+                </ul>
+                <p><strong>Total:</strong> 66 de 150 flores (44.00%) clasificadas correctamente según el código base</p>
+            </div>
+            
+            <p><em>El mapeo manual de clusters a especies en el código base resulta en un accuracy menor que el mapeo automático basado en la especie más frecuente.</em></p>
+        </div>
+
+        <div class="image-container">
+            <img src="cluter.png" alt="Cluster Plot K-means" class="analysis-image" onclick="openModal(this.src, this.alt)">
+            <p class="image-caption">🤖 Figura 4: Cluster Plot - K-means (K=3) - Visualización de los grupos encontrados por el algoritmo (Haz clic para ampliar)</p>
+        </div>
+
+        <h3>b) Modelos supervisados (¡Ahora sí sabemos la especie!)</h3>
+
+        <div class="info">
+            <p>Probamos 6 modelos diferentes. Cada uno aprende de forma única:</p>
+        </div>
+
+        <div class="model-grid">
+            <div class="model-card">
+                <h4>KNN 🌟</h4>
+                <p>Busca las flores más parecidas y copia su especie</p>
+                <div class="example">
+                    <p><strong>Ejemplo:</strong> "Esta flor se parece a 3 flores setosa cercanas → debe ser setosa"</p>
+                </div>
+            </div>
+
+            <div class="model-card">
+                <h4>SVM 📏</h4>
+                <p>Dibuja líneas imaginarias para separar especies</p>
+                <div class="example">
+                    <p><strong>Ejemplo:</strong> "Si pétalo > 2.5cm → virginica, si no → setosa"</p>
+                </div>
+            </div>
+
+            <div class="model-card">
+                <h4>Naive Bayes ⚡</h4>
+                <p>Calcula probabilidades basado en características</p>
+                <div class="example">
+                    <p><strong>Ejemplo:</strong> "90% de setosas tienen pétalos cortos → 90% probable que sea setosa"</p>
+                </div>
+            </div>
+
+            <div class="model-card">
+                <h4>Árbol de Decisión 🌳</h4>
+                <p>Hace preguntas una por una hasta decidir</p>
+                <div class="example">
+                    <p><strong>Ejemplo:</strong> "¿Pétalo largo? No → setosa. Sí → ¿Sépalo ancho? Sí → versicolor"</p>
+                </div>
+            </div>
+
+            <div class="model-card">
+                <h4>Random Forest 🌲</h4>
+                <p>Varios árboles votan y gana la mayoría</p>
+                <div class="example">
+                    <p><strong>Ejemplo:</strong> "3 árboles dicen setosa, 1 dice versicolor → setosa"</p>
+                </div>
+            </div>
+
+            <div class="model-card">
+                <h4>Red Neuronal 🧠</h4>
+                <p>Aprende patrones complejos como el cerebro</p>
+                <div class="example">
+                    <p><strong>Ejemplo:</strong> "Después de ver 100 flores, reconoce patrones sutiles"</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="image-container">
+            <img src="image.png" alt="Modelos Supervisados" class="analysis-image" onclick="openModal(this.src, this.alt)">
+            <p class="image-caption">🤖 Ejemplo visual: Diferentes modelos de Machine Learning clasificando flores (Haz clic para ampliar)</p>
+        </div>
+
+        <h2>5. ¿Cuál modelo es mejor? 🏆</h2>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Modelo</th>
+                    <th>Precisión (%)</th>
+                    <th>¿Qué tan rápido?</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>K-means</td>
+                    <td>44.00</td>
+                    <td>Muy rápido</td>
+                </tr>
+                <tr>
+                    <td>KNN</td>
+                    <td>90.00</td>
+                    <td>Lento</td>
+                </tr>
+                <tr>
+                    <td>SVM</td>
+                    <td>93.33</td>
+                    <td>Rápido</td>
+                </tr>
+                <tr>
+                    <td>Naive Bayes</td>
+                    <td>93.33</td>
+                    <td>¡El más rápido!</td>
+                </tr>
+                <tr>
+                    <td>Árbol Decisión</td>
+                    <td>93.33</td>
+                    <td>Rápido</td>
+                </tr>
+                <tr>
+                    <td>Random Forest</td>
+                    <td>93.33</td>
+                    <td>Rápido</td>
+                </tr>
+                <tr>
+                    <td>Red Neuronal</td>
+                    <td>96.67</td>
+                    <td>Rápido</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="highlight">
+            <ul>
+                <li><strong>Más preciso:</strong> Red Neuronal</li>
+                <li><strong>Más rápido:</strong> Naive Bayes</li>
+                <li><strong>Más fácil de entender:</strong> Árbol de Decisión</li>
+                <li><strong>Para explorar sin saber la especie:</strong> K-means</li>
+            </ul>
+        </div>
+
+        <h2>6. Visualizaciones y Gráficos 📈</h2>
+
+        <h3>6.1 ¿Cómo decide cada modelo?</h3>
+        
+        <div class="image-grid">
+            <div class="image-container">
+                <img src="importancia_variables_rf.png" alt="Importancia Variables RF" class="analysis-image" onclick="openModal(this.src, this.alt)">
+                <p class="image-caption">📊 Importancia de Variables - ¿Cuáles son más importantes para predecir? (Haz clic para ampliar)</p>
+            </div>
+        </div>
+
+        <h3>6.2 ¿Cuántas veces acertó cada modelo?</h3>
+        
+        <div class="image-grid">
+            <div class="image-container">
+                <img src="matriz_confusion_knn.png" alt="Matriz Confusión KNN" class="analysis-image" onclick="openModal(this.src, this.alt)">
+                <p class="image-caption">✅ Matriz de Confusión - KNN (Haz clic para ampliar)</p>
+            </div>
+            <div class="image-container">
+                <img src="matriz_confusion_svm.png" alt="Matriz Confusión SVM" class="analysis-image" onclick="openModal(this.src, this.alt)">
+                <p class="image-caption">✅ Matriz de Confusión - SVM (Haz clic para ampliar)</p>
+            </div>
+            <div class="image-container">
+                <img src="matriz_confusion_dt.png" alt="Matriz Confusión Decision Tree" class="analysis-image" onclick="openModal(this.src, this.alt)">
+                <p class="image-caption">✅ Matriz de Confusión - Árbol de Decisión (Haz clic para ampliar)</p>
+            </div>
+            <div class="image-container">
+                <img src="matriz_confusion_nb.png" alt="Matriz Confusión Naive Bayes" class="analysis-image" onclick="openModal(this.src, this.alt)">
+                <p class="image-caption">✅ Matriz de Confusión - Naive Bayes (Haz clic para ampliar)</p>
+            </div>
+            <div class="image-container">
+                <img src="matriz_confusion_rf.png" alt="Matriz Confusión Random Forest" class="analysis-image" onclick="openModal(this.src, this.alt)">
+                <p class="image-caption">✅ Matriz de Confusión - Random Forest (Haz clic para ampliar)</p>
+            </div>
+            <div class="image-container">
+                <img src="matriz_confusion_nn.png" alt="Matriz Confusión Neural Network" class="analysis-image" onclick="openModal(this.src, this.alt)">
+                <p class="image-caption">✅ Matriz de Confusión - Red Neuronal (Haz clic para ampliar)</p>
+            </div>
+        </div>
+
+        <h3>6.3 Comparación de modelos</h3>
+        
+        <div class="comparison-grid">
+            <div class="image-container">
+                <img src="comparacion_accuracy.png" alt="Comparación Accuracy" class="analysis-image" onclick="openModal(this.src, this.alt)">
+                <p class="image-caption">🏆 Comparación de Precisión por Modelo (Haz clic para ampliar)</p>
+            </div>
+            <div class="image-container">
+                <img src="comparacion_tiempos.png" alt="Comparación Tiempos" class="analysis-image" onclick="openModal(this.src, this.alt)">
+                <p class="image-caption">⏱️ Comparación de Tiempos de Entrenamiento (Haz clic para ampliar)</p>
+            </div>
+        </div>
+
+        <h2>7. ¿Qué aprendimos? 🤔</h2>
+
+        <div class="success">
+            <ul>
+                <li>¡Las flores del dataset IRIS son bastante fáciles de clasificar para los modelos de Machine Learning!</li>
+                <li>Si quieres la máxima precisión, usa una <strong>Red Neuronal</strong></li>
+                <li>Si prefieres velocidad, <strong>Naive Bayes</strong> es tu amigo</li>
+                <li>Si quieres entender cómo decide el modelo, elige un <strong>Árbol de Decisión</strong></li>
+                <li>Y si solo quieres explorar, <strong>K-means</strong> te puede sorprender</li>
+            </ul>
+        </div>
+
+        <h2>8. Recomendaciones para principiantes 🌱</h2>
+
+        <div class="info">
+            <ul>
+                <li>No te asustes por los nombres raros: cada modelo es como una herramienta diferente para resolver el mismo problema</li>
+                <li>¡Juega con los datos! Cambia parámetros, mira los gráficos, y pregúntate siempre "¿por qué?"</li>
+                <li>Recuerda: lo importante no es solo el resultado, sino entender el camino</li>
+            </ul>
+        </div>
+
+        <hr style="margin: 40px 0; border: none; border-top: 2px solid #3498db;">
+
+        <div class="final-message">
+            <p>¡Gracias por leer! Si tienes dudas, ¡pregunta! Aprender Machine Learning es como cuidar un jardín: con paciencia y curiosidad, verás florecer tu conocimiento. 🌷</p>
+        </div>
+
+        <div style="text-align: center; color: #7f8c8d; font-size: 0.9em;">
+            <p>Proyecto Final de Machine Learning Aplicado - Dataset IRIS</p>
+            <p>Análisis completo con 7 algoritmos de clasificación</p>
+        </div>
+    </div>
+
+    <!-- Botón para subir al inicio -->
+    <button id="scrollToTop" class="scroll-to-top" onclick="scrollToTop()">
+        <span>↑</span>
+    </button>
+
+    <!-- Modal para imágenes -->
+    <div id="imageModal" class="modal">
+        <span class="close">&times;</span>
+        <img class="modal-content" id="modalImage" style="width:100vw; height:100vh; max-width:100vw; max-height:100vh; object-fit:contain; background:#111;">
+    </div>
+
+    <script>
+        // Modal functionality
+        function openModal(src, alt) {
+            var modal = document.getElementById("imageModal");
+            var modalImg = document.getElementById("modalImage");
+            modal.style.display = "block";
+            modalImg.src = src;
+            modalImg.alt = alt;
+        }
+
+        // Close modal when clicking X
+        document.querySelector('.close').onclick = function() {
+            document.getElementById("imageModal").style.display = "none";
+        }
+
+        // Close modal when clicking outside
+        document.getElementById("imageModal").onclick = function(e) {
+            if (e.target === this) {
+                this.style.display = "none";
+            }
+        }
+
+        // Close modal with Escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                document.getElementById("imageModal").style.display = "none";
+            }
+        });
+
+        // Scroll to top functionality
+            function scrollToTop() {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    }
+    
+    function scrollToContent() {
+        document.getElementById('content-start').scrollIntoView({
+            behavior: 'smooth'
+        });
+    }
+
+        // Show/hide scroll to top button
+        window.onscroll = function() {
+            var scrollButton = document.getElementById('scrollToTop');
+            if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+                scrollButton.style.display = 'block';
+            } else {
+                scrollButton.style.display = 'none';
+            }
+        }
+
+        // Initialize scroll button on page load
+        window.onload = function() {
+            var scrollButton = document.getElementById('scrollToTop');
+            if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+                scrollButton.style.display = 'block';
+            }
+        }
+    </script>
+</body>
+</html>

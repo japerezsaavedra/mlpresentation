@@ -1,0 +1,1448 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🌺 El Último Jardín: Una Odisea de IA en el Mundo de las Flores Mutantes</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Variables CSS modernas para la versión distópica */
+        :root {
+            --neon-pink: #ff006e;
+            --neon-blue: #00d4ff;
+            --neon-purple: #8338ec;
+            --neon-green: #06ffa5;
+            --neon-orange: #ffbe0b;
+            --dark-space: #0a0a0a;
+            --space-gray: #1a1a2e;
+            --cyber-blue: #16213e;
+            --glass-bg: rgba(255, 255, 255, 0.1);
+            --glass-border: rgba(255, 255, 255, 0.2);
+            --neon-shadow: 0 0 20px rgba(255, 0, 110, 0.5);
+            --cyber-shadow: 0 8px 32px rgba(0, 212, 255, 0.3);
+        }
+
+        /* Estilos específicos para la versión distópica moderna */
+        .distopian-header {
+            background: linear-gradient(135deg, var(--dark-space) 0%, var(--space-gray) 50%, var(--cyber-blue) 100%);
+            color: var(--neon-pink);
+            text-align: center;
+            padding: 3rem 2rem;
+            margin-bottom: 3rem;
+            border-radius: 20px;
+            box-shadow: var(--neon-shadow);
+            border: 2px solid var(--neon-pink);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .distopian-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+            animation: shimmer 3s infinite;
+        }
+
+        @keyframes shimmer {
+            0% { left: -100%; }
+            100% { left: 100%; }
+        }
+        
+        .story-section {
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid var(--glass-border);
+            border-left: 5px solid var(--neon-pink);
+            padding: 2rem;
+            margin: 2.5rem 0;
+            border-radius: 15px;
+            backdrop-filter: blur(15px);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .story-section:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(255, 0, 110, 0.2);
+            border-left-color: var(--neon-green);
+        }
+        
+        .warning-distopian {
+            background: linear-gradient(135deg, var(--neon-pink) 0%, #ff6b9d 100%);
+            color: white;
+            padding: 2rem;
+            border-radius: 15px;
+            margin: 1.5rem 0;
+            box-shadow: var(--neon-shadow);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .warning-distopian::before {
+            content: '⚠️';
+            position: absolute;
+            top: -10px;
+            right: -10px;
+            font-size: 3rem;
+            opacity: 0.3;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); opacity: 0.3; }
+            50% { transform: scale(1.1); opacity: 0.5; }
+        }
+        
+        .ai-message {
+            background: linear-gradient(135deg, var(--neon-blue) 0%, var(--neon-purple) 100%);
+            color: white;
+            padding: 2rem;
+            border-radius: 15px;
+            margin: 1.5rem 0;
+            box-shadow: var(--cyber-shadow);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            position: relative;
+        }
+
+        .ai-message::before {
+            content: '🤖';
+            position: absolute;
+            top: -15px;
+            left: 20px;
+            font-size: 2rem;
+            background: var(--dark-space);
+            padding: 5px 10px;
+            border-radius: 50%;
+            border: 2px solid var(--neon-blue);
+        }
+        
+        .survival-tip {
+            background: linear-gradient(135deg, var(--neon-orange) 0%, #ffd93d 100%);
+            color: var(--dark-space);
+            padding: 1.5rem;
+            border-radius: 15px;
+            margin: 1.5rem 0;
+            border-left: 5px solid var(--neon-pink);
+            box-shadow: 0 8px 25px rgba(255, 190, 11, 0.3);
+            position: relative;
+        }
+
+        .survival-tip::before {
+            content: '💡';
+            position: absolute;
+            top: -10px;
+            left: 20px;
+            font-size: 1.5rem;
+            background: var(--dark-space);
+            padding: 5px;
+            border-radius: 50%;
+            border: 2px solid var(--neon-orange);
+        }
+
+        /* Mejoras para títulos */
+        .story-section h2 {
+            color: var(--neon-green);
+            text-shadow: 0 0 10px rgba(6, 255, 165, 0.5);
+            font-weight: 700;
+            letter-spacing: 1px;
+            font-size: 2.5rem;
+        }
+
+        .story-section h3 {
+            color: var(--neon-blue);
+            text-shadow: 0 0 8px rgba(0, 212, 255, 0.5);
+            font-size: 2rem;
+        }
+
+        /* Mejoras para tablas */
+        .story-section table {
+            background: rgba(255, 255, 255, 0.15);
+            border: 1px solid var(--glass-border);
+            backdrop-filter: blur(10px);
+        }
+
+        .story-section th {
+            background: linear-gradient(135deg, var(--neon-purple), var(--neon-blue));
+            color: white;
+            text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+        }
+
+        .story-section td {
+            color: #000000 !important;
+            text-shadow: 0 0 3px rgba(255, 255, 255, 0.8) !important;
+            font-weight: 600;
+        }
+
+        /* Mejorar contraste de las tarjetas de imágenes */
+        .image-container {
+            background: rgba(0, 0, 0, 0.7) !important;
+            border: 2px solid var(--neon-green) !important;
+            border-radius: 15px !important;
+            padding: 2rem !important;
+            margin: 2rem 0 !important;
+            box-shadow: 0 10px 30px rgba(6, 255, 165, 0.3) !important;
+        }
+
+        .image-caption {
+            color: #ffffff !important;
+            text-shadow: 0 0 8px rgba(255, 255, 255, 0.6) !important;
+            font-weight: 600 !important;
+            background: rgba(0, 0, 0, 0.8) !important;
+            padding: 1rem !important;
+            border-radius: 10px !important;
+            margin-top: 1rem !important;
+            border: 1px solid var(--neon-green) !important;
+        }
+
+        /* Mejoras para listas */
+        .story-section ul li {
+            color: #ffffff;
+            text-shadow: 0 0 5px rgba(255, 255, 255, 0.3);
+            font-size: 1.3rem;
+            margin-bottom: 0.8rem;
+        }
+
+        /* Texto principal legible */
+        .story-section p {
+            color: #ffffff;
+            text-shadow: 0 0 3px rgba(255, 255, 255, 0.2);
+            line-height: 1.8;
+            font-size: 1.4rem;
+        }
+
+        /* Texto en tablas */
+        .story-section td {
+            color: #ffffff;
+            text-shadow: 0 0 3px rgba(255, 255, 255, 0.2);
+            font-size: 1.3rem;
+            padding: 15px 10px;
+        }
+
+        /* Texto en captions de imágenes */
+        .story-section .image-caption {
+            color: #ffffff;
+            text-shadow: 0 0 3px rgba(255, 255, 255, 0.2);
+            font-size: 1.3rem;
+            font-weight: 500;
+        }
+
+        /* Texto en tarjetas de modelos */
+        .model-card p {
+            color: #ffffff;
+            text-shadow: 0 0 5px rgba(255, 255, 255, 0.4);
+            font-size: 1.3rem;
+            font-weight: 600;
+        }
+
+        .model-card .example {
+            color: #ffffff;
+            text-shadow: 0 0 5px rgba(255, 255, 255, 0.6);
+            font-size: 1.2rem;
+            font-weight: 600;
+            background: rgba(0, 0, 0, 0.7);
+            padding: 1rem;
+            border-radius: 10px;
+            border: 1px solid var(--neon-green);
+            margin-top: 1rem;
+        }
+
+        /* Texto en el mensaje final */
+        .final-message p {
+            color: #ffffff;
+            text-shadow: 0 0 5px rgba(255, 255, 255, 0.3);
+        }
+
+        .final-message ul li {
+            color: #ffffff;
+            text-shadow: 0 0 5px rgba(255, 255, 255, 0.3);
+        }
+
+        /* Efectos de hover para imágenes */
+        .story-section .image-container:hover {
+            transform: scale(1.02);
+            box-shadow: 0 15px 40px rgba(255, 0, 110, 0.3);
+        }
+
+        /* Animación para el título principal */
+        .distopian-header h1 {
+            background: linear-gradient(45deg, var(--neon-pink), var(--neon-blue), var(--neon-green));
+            background-size: 200% 200%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: gradientShift 3s ease infinite;
+        }
+
+        @keyframes gradientShift {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+
+        /* Fondo futurista para el body */
+        body {
+            background: linear-gradient(135deg, var(--dark-space) 0%, var(--space-gray) 50%, var(--cyber-blue) 100%);
+            background-attachment: fixed;
+            position: relative;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                radial-gradient(circle at 20% 80%, rgba(255, 0, 110, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(0, 212, 255, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 40% 40%, rgba(6, 255, 165, 0.05) 0%, transparent 50%);
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        /* Mejoras para el contenedor principal */
+        .container {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(20px);
+            border: 1px solid var(--glass-border);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Mejoras para las tarjetas de modelos */
+        .model-card {
+            background: rgba(0, 0, 0, 0.8);
+            border: 2px solid var(--neon-green);
+            backdrop-filter: blur(15px);
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 25px rgba(6, 255, 165, 0.3);
+            padding: 2rem;
+        }
+
+        .model-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(255, 0, 110, 0.3);
+            border-color: var(--neon-pink);
+        }
+
+        .model-card h4 {
+            color: var(--neon-green);
+            text-shadow: 0 0 10px rgba(6, 255, 165, 0.8);
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            background: rgba(0, 0, 0, 0.5);
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            border: 1px solid var(--neon-green);
+        }
+
+        /* Mejoras para el mensaje final */
+        .final-message {
+            background: linear-gradient(135deg, var(--neon-purple) 0%, var(--neon-blue) 100%);
+            border: 2px solid var(--neon-green);
+            box-shadow: var(--cyber-shadow);
+        }
+
+        .final-message h3 {
+            color: var(--neon-green);
+            text-shadow: 0 0 15px rgba(6, 255, 165, 0.8);
+        }
+
+        /* Estilos para la sección de autores */
+        .authors-section {
+            margin-top: 2rem;
+            padding: 2rem;
+            background: rgba(0, 0, 0, 0.6);
+            border-radius: 15px;
+            border: 2px solid var(--neon-blue);
+            box-shadow: 0 8px 25px rgba(0, 212, 255, 0.3);
+        }
+
+        .authors-section h3 {
+            color: var(--neon-blue);
+            text-shadow: 0 0 10px rgba(0, 212, 255, 0.8);
+            font-size: 2rem;
+            text-align: center;
+            margin-bottom: 1.5rem;
+            font-weight: 700;
+        }
+
+        .authors-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+            justify-items: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        @media (max-width: 768px) {
+            .authors-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+        }
+
+        .author {
+            background: linear-gradient(135deg, var(--neon-purple), var(--neon-blue));
+            color: white;
+            padding: 1.5rem 3rem;
+            border-radius: 25px;
+            font-size: 1.5rem;
+            font-weight: 700;
+            text-align: center;
+            box-shadow: 0 8px 20px rgba(131, 56, 236, 0.4);
+            transition: all 0.3s ease;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            min-width: 280px;
+            letter-spacing: 1px;
+        }
+
+        .author:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(131, 56, 236, 0.6);
+            border-color: var(--neon-green);
+        }
+
+        /* Estilos para botones de navegación */
+        .navigation-buttons {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 2rem 0;
+            gap: 1rem;
+        }
+
+        .nav-btn {
+            background: linear-gradient(135deg, var(--neon-purple), var(--neon-blue));
+            color: white;
+            border: none;
+            padding: 1rem 2rem;
+            border-radius: 25px;
+            font-size: 1.2rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(131, 56, 236, 0.4);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            min-width: 180px;
+        }
+
+        .nav-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(131, 56, 236, 0.6);
+            border-color: var(--neon-green);
+        }
+
+        .prev-btn {
+            background: linear-gradient(135deg, var(--neon-pink), var(--neon-purple));
+        }
+
+        .next-btn {
+            background: linear-gradient(135deg, var(--neon-blue), var(--neon-green));
+        }
+
+        .home-btn {
+            background: linear-gradient(135deg, var(--neon-orange), var(--neon-pink));
+        }
+
+        @media (max-width: 768px) {
+            .navigation-buttons {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            .nav-btn {
+                width: 100%;
+                min-width: auto;
+                font-size: 1.1rem;
+                padding: 0.8rem 1.5rem;
+            }
+        }
+
+        /* Estilos para la sección destacada de Random Forest */
+        .rf-highlight-section {
+            background: linear-gradient(135deg, rgba(0, 0, 0, 0.9), rgba(6, 255, 165, 0.1));
+            border: 3px solid var(--neon-green);
+            border-radius: 20px;
+            padding: 3rem;
+            margin: 2rem 0;
+            box-shadow: 0 15px 40px rgba(6, 255, 165, 0.4);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .rf-highlight-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(6, 255, 165, 0.1), transparent);
+            animation: rfShimmer 4s infinite;
+        }
+
+        @keyframes rfShimmer {
+            0% { left: -100%; }
+            100% { left: 100%; }
+        }
+
+        .rf-header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .rf-header h3 {
+            color: var(--neon-green);
+            font-size: 2.5rem;
+            font-weight: 700;
+            text-shadow: 0 0 15px rgba(6, 255, 165, 0.8);
+            margin-bottom: 0.5rem;
+        }
+
+        .rf-subtitle {
+            color: #ffffff;
+            font-size: 1.3rem;
+            font-style: italic;
+            text-shadow: 0 0 8px rgba(255, 255, 255, 0.5);
+        }
+
+        .rf-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: start;
+        }
+
+        .rf-explanation {
+            background: rgba(0, 0, 0, 0.6);
+            border: 2px solid var(--neon-blue);
+            border-radius: 15px;
+            padding: 2rem;
+            box-shadow: 0 8px 25px rgba(0, 212, 255, 0.3);
+        }
+
+        .rf-explanation h4 {
+            color: var(--neon-blue);
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            text-shadow: 0 0 10px rgba(0, 212, 255, 0.6);
+        }
+
+        .rf-explanation p {
+            color: #ffffff;
+            font-size: 1.2rem;
+            line-height: 1.8;
+            margin-bottom: 2rem;
+        }
+
+        .rf-features {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .rf-feature {
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid var(--neon-green);
+            border-radius: 10px;
+            padding: 1rem;
+            color: #ffffff;
+            font-size: 1.1rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .rf-feature:hover {
+            background: rgba(6, 255, 165, 0.2);
+            transform: translateX(10px);
+        }
+
+        .rf-icon {
+            font-size: 1.5rem;
+        }
+
+        .rf-visualization {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .rf-image-container {
+            background: rgba(0, 0, 0, 0.8);
+            border: 2px solid var(--neon-green);
+            border-radius: 15px;
+            padding: 2rem;
+            box-shadow: 0 10px 30px rgba(6, 255, 165, 0.3);
+        }
+
+        .rf-image {
+            border-radius: 10px;
+            transition: all 0.3s ease;
+        }
+
+        .rf-image:hover {
+            transform: scale(1.05);
+            box-shadow: 0 15px 40px rgba(6, 255, 165, 0.5);
+        }
+
+        .rf-caption {
+            color: #ffffff;
+            font-size: 1.2rem;
+            font-weight: 600;
+            text-align: center;
+            margin-top: 1rem;
+        }
+
+        .rf-insights {
+            background: rgba(0, 0, 0, 0.7);
+            border: 2px solid var(--neon-purple);
+            border-radius: 15px;
+            padding: 2rem;
+            box-shadow: 0 8px 25px rgba(131, 56, 236, 0.3);
+        }
+
+        .rf-insights h4 {
+            color: var(--neon-purple);
+            font-size: 1.6rem;
+            margin-bottom: 1.5rem;
+            text-align: center;
+            text-shadow: 0 0 10px rgba(131, 56, 236, 0.6);
+        }
+
+        .insight-item {
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid var(--neon-purple);
+            border-radius: 10px;
+            padding: 1rem;
+            margin-bottom: 1rem;
+            color: #ffffff;
+            font-size: 1.1rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .insight-item:hover {
+            background: rgba(131, 56, 236, 0.2);
+            transform: translateX(10px);
+        }
+
+        .insight-rank {
+            font-size: 1.5rem;
+            min-width: 40px;
+        }
+
+        @media (max-width: 768px) {
+            .rf-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            
+            .rf-header h3 {
+                font-size: 2rem;
+            }
+            
+            .rf-explanation h4 {
+                font-size: 1.5rem;
+            }
+            
+            .rf-insights h4 {
+                font-size: 1.4rem;
+            }
+        }
+
+        /* Estilos para la sección destacada del Árbol de Decisión */
+        .dt-highlight-section {
+            background: linear-gradient(135deg, rgba(0, 0, 0, 0.9), rgba(255, 165, 0, 0.1));
+            border: 3px solid var(--neon-orange);
+            border-radius: 20px;
+            padding: 3rem;
+            margin: 2rem 0;
+            box-shadow: 0 15px 40px rgba(255, 165, 0, 0.4);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .dt-highlight-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 165, 0, 0.1), transparent);
+            animation: dtShimmer 4s infinite;
+        }
+
+        @keyframes dtShimmer {
+            0% { left: -100%; }
+            100% { left: 100%; }
+        }
+
+        .dt-header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .dt-header h3 {
+            color: var(--neon-orange);
+            font-size: 2.5rem;
+            font-weight: 700;
+            text-shadow: 0 0 15px rgba(255, 165, 0, 0.8);
+            margin-bottom: 0.5rem;
+        }
+
+        .dt-subtitle {
+            color: #ffffff;
+            font-size: 1.3rem;
+            font-style: italic;
+            text-shadow: 0 0 8px rgba(255, 255, 255, 0.5);
+        }
+
+        .dt-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: start;
+        }
+
+        .dt-explanation {
+            background: rgba(0, 0, 0, 0.6);
+            border: 2px solid var(--neon-yellow);
+            border-radius: 15px;
+            padding: 2rem;
+            box-shadow: 0 8px 25px rgba(255, 255, 0, 0.3);
+        }
+
+        .dt-explanation h4 {
+            color: var(--neon-yellow);
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            text-shadow: 0 0 10px rgba(255, 255, 0, 0.6);
+        }
+
+        .dt-explanation p {
+            color: #ffffff;
+            font-size: 1.2rem;
+            line-height: 1.8;
+            margin-bottom: 2rem;
+        }
+
+        .dt-features {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .dt-feature {
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid var(--neon-orange);
+            border-radius: 10px;
+            padding: 1rem;
+            color: #ffffff;
+            font-size: 1.1rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .dt-feature:hover {
+            background: rgba(255, 165, 0, 0.2);
+            transform: translateX(10px);
+        }
+
+        .dt-icon {
+            font-size: 1.5rem;
+        }
+
+        .dt-visualization {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .dt-image-container {
+            background: rgba(0, 0, 0, 0.8);
+            border: 2px solid var(--neon-orange);
+            border-radius: 15px;
+            padding: 2rem;
+            box-shadow: 0 10px 30px rgba(255, 165, 0, 0.3);
+        }
+
+        .dt-image {
+            border-radius: 10px;
+            transition: all 0.3s ease;
+        }
+
+        .dt-image:hover {
+            transform: scale(1.05);
+            box-shadow: 0 15px 40px rgba(255, 165, 0, 0.5);
+        }
+
+        .dt-caption {
+            color: #ffffff;
+            font-size: 1.2rem;
+            font-weight: 600;
+            text-align: center;
+            margin-top: 1rem;
+        }
+
+        .dt-insights {
+            background: rgba(0, 0, 0, 0.7);
+            border: 2px solid var(--neon-yellow);
+            border-radius: 15px;
+            padding: 2rem;
+            box-shadow: 0 8px 25px rgba(255, 255, 0, 0.3);
+        }
+
+        .dt-insights h4 {
+            color: var(--neon-yellow);
+            font-size: 1.6rem;
+            margin-bottom: 1.5rem;
+            text-align: center;
+            text-shadow: 0 0 10px rgba(255, 255, 0, 0.6);
+        }
+
+        .decision-path {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .path-step {
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid var(--neon-yellow);
+            border-radius: 10px;
+            padding: 1rem;
+            color: #ffffff;
+            font-size: 1.1rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .path-step:hover {
+            background: rgba(255, 255, 0, 0.2);
+            transform: translateX(10px);
+        }
+
+        .path-step:not(:last-child)::after {
+            content: '↓';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: var(--neon-yellow);
+            font-size: 1.5rem;
+            text-shadow: 0 0 10px rgba(255, 255, 0, 0.8);
+        }
+
+        .step-number {
+            font-size: 1.5rem;
+            min-width: 40px;
+        }
+
+        @media (max-width: 768px) {
+            .dt-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            
+            .dt-header h3 {
+                font-size: 2rem;
+            }
+            
+            .dt-explanation h4 {
+                font-size: 1.5rem;
+            }
+            
+            .dt-insights h4 {
+                font-size: 1.4rem;
+            }
+        }
+
+        /* Mejorar legibilidad en secciones especiales */
+        .warning-distopian p {
+            color: #ffffff;
+            text-shadow: 0 0 5px rgba(255, 255, 255, 0.3);
+            font-weight: 500;
+            font-size: 1.3rem;
+        }
+
+        .ai-message p {
+            color: #ffffff;
+            text-shadow: 0 0 5px rgba(255, 255, 255, 0.3);
+            font-weight: 500;
+            font-size: 1.3rem;
+        }
+
+        .survival-tip p {
+            color: #000000;
+            text-shadow: 0 0 3px rgba(255, 255, 255, 0.5);
+            font-weight: 600;
+            font-size: 1.2rem;
+        }
+
+        .survival-tip h4 {
+            color: #000000;
+            text-shadow: 0 0 5px rgba(255, 255, 255, 0.7);
+            font-weight: 700;
+            font-size: 1.4rem;
+        }
+
+        /* Mejorar contraste en el header */
+        .distopian-header p {
+            color: #ffffff;
+            text-shadow: 0 0 8px rgba(255, 255, 255, 0.4);
+            font-weight: 500;
+            font-size: 1.4rem;
+        }
+
+        /* Mejorar legibilidad de secciones especiales */
+        .info {
+            background: rgba(0, 0, 0, 0.7) !important;
+            border: 2px solid var(--neon-pink) !important;
+            border-radius: 15px !important;
+            padding: 2rem !important;
+            margin: 1.5rem 0 !important;
+            box-shadow: 0 8px 25px rgba(255, 0, 110, 0.3) !important;
+        }
+
+        .info h4, .info h5 {
+            color: #ffffff !important;
+            text-shadow: 0 0 8px rgba(255, 255, 255, 0.5) !important;
+        }
+
+        .info p, .info li {
+            color: #ffffff !important;
+            text-shadow: 0 0 3px rgba(255, 255, 255, 0.3) !important;
+        }
+
+        .highlight {
+            background: rgba(0, 0, 0, 0.8) !important;
+            border: 2px solid var(--neon-blue) !important;
+            border-radius: 10px !important;
+            padding: 1.5rem !important;
+            margin: 1rem 0 !important;
+            box-shadow: 0 8px 25px rgba(0, 212, 255, 0.3) !important;
+        }
+
+        .highlight h5, .highlight p, .highlight li {
+            color: #ffffff !important;
+            text-shadow: 0 0 5px rgba(255, 255, 255, 0.4) !important;
+        }
+    </style>
+</head>
+<body>
+    <div class="hero-section">
+        <img src="portada.png" alt="Portada del proyecto" class="hero-image">
+        <div class="hero-overlay">
+            <button class="scroll-down-btn" onclick="scrollToContent()">
+                <span class="scroll-text">Iniciar la Misión</span>
+                <span class="scroll-arrow">↓</span>
+            </button>
+        </div>
+    </div>
+
+    <div class="container" id="content-start">
+        
+        <div class="distopian-header">
+            <h1>🌺 El Último Jardín: Una Odisea de IA en el Mundo de las Flores Mutantes</h1>
+            <p><em>Año 2157 - El mundo ha cambiado. Las flores iris han mutado y solo la inteligencia artificial puede salvarnos...</em></p>
+            <div class="authors-section">
+                <h3>🧠 Equipo de Investigación IA</h3>
+                <div class="authors-grid">
+                    <div class="author">Sofía Pérez</div>
+                    <div class="author">Stephanie Orellana</div>
+                    <div class="author">Enrique Quargnolo</div>
+                    <div class="author">Jorge Pérez</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="story-section">
+            <h2>🚨 ALERTA MUNDIAL: Las Flores Han Mutado</h2>
+            <p>En el año 2157, después del Gran Evento Solar de 2142, las flores iris de todo el mundo comenzaron a mutar de manera impredecible. Los científicos tradicionales se rindieron. Los patrones de clasificación que funcionaron durante siglos ya no servían. La humanidad necesitaba una nueva esperanza.</p>
+            
+            <div class="warning-distopian">
+                <h3>⚠️ SITUACIÓN CRÍTICA</h3>
+                <p><strong>Las flores iris mutantes representan una amenaza para la agricultura mundial.</strong> Sin una clasificación precisa, no podemos predecir su comportamiento, su toxicidad, o su potencial medicinal. La supervivencia de la humanidad depende de nuestra capacidad para entender estas nuevas formas de vida.</p>
+            </div>
+        </div>
+
+        <div class="story-section">
+            <h2>🤖 La IA: Nuestra Última Esperanza</h2>
+            <p>En el Instituto de Investigación de Inteligencia Artificial Avanzada (IIAA), un equipo de científicos desarrolló un sistema revolucionario: <strong>EL CLASIFICADOR UNIVERSAL DE FLORES MUTANTES (CUFM)</strong>. Este sistema utiliza múltiples algoritmos de machine learning para enfrentar la amenaza de las flores mutantes.</p>
+            
+            <div class="ai-message">
+                <h3>🧠 MENSAJE DEL SISTEMA CUFM</h3>
+                <p>"Hola, soy CUFM-2157. He sido programado para analizar y clasificar las flores iris mutantes. Mi misión es simple: salvar a la humanidad a través de la clasificación precisa. ¿Estás listo para esta odisea?"</p>
+            </div>
+        </div>
+
+        <div class="story-section" id="capitulo-1">
+            <h2>📊 Capítulo 1: El Análisis de las Mutaciones</h2>
+            
+            <div class="navigation-buttons">
+                <button class="nav-btn next-btn" onclick="navigateToSection('capitulo-2')">Capítulo 2 →</button>
+            </div>
+            <p>Nuestro primer paso es entender qué hemos perdido. Las flores iris mutantes ya no siguen los patrones clásicos. Necesitamos analizar sus nuevas características para desarrollar estrategias de supervivencia.</p>
+            
+            <div class="image-container">
+                <img src="boxplot_variables.png" alt="Análisis de mutaciones florales" class="analysis-image" onclick="openModal(this.src, this.alt)">
+                <p class="image-caption">🚨 Figura 1: Análisis de las mutaciones - ¿Cómo se han transformado las medidas de las flores? (Haz clic para ampliar)</p>
+            </div>
+
+            <div class="survival-tip">
+                <h4>💡 CONSEJO DE SUPERVIVENCIA #1</h4>
+                <p><strong>Observa las cajas:</strong> Cada "caja" representa el rango donde se encuentran la mayoría de las flores mutantes. Si ves una caja muy alta, significa que esa característica ha mutado significativamente.</p>
+            </div>
+
+            <h3>📈 Resumen estadístico de las mutaciones</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Característica Mutante</th>
+                        <th>Mínimo</th>
+                        <th>1er Cuartil</th>
+                        <th>Mediana</th>
+                        <th>Media</th>
+                        <th>3er Cuartil</th>
+                        <th>Máximo</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td><strong>Largo del Sépalo Mutante</strong></td><td>4.3 cm</td><td>5.1 cm</td><td>5.8 cm</td><td>5.84 cm</td><td>6.4 cm</td><td>7.9 cm</td></tr>
+                    <tr><td><strong>Ancho del Sépalo Mutante</strong></td><td>2.0 cm</td><td>2.8 cm</td><td>3.0 cm</td><td>3.06 cm</td><td>3.3 cm</td><td>4.4 cm</td></tr>
+                    <tr><td><strong>Largo del Pétalo Mutante</strong></td><td>1.0 cm</td><td>1.6 cm</td><td>4.35 cm</td><td>3.76 cm</td><td>5.1 cm</td><td>6.9 cm</td></tr>
+                    <tr><td><strong>Ancho del Pétalo Mutante</strong></td><td>0.1 cm</td><td>0.3 cm</td><td>1.3 cm</td><td>1.20 cm</td><td>1.8 cm</td><td>2.5 cm</td></tr>
+                </tbody>
+            </table>
+
+            <div class="data-visualization-container">
+                <img src="flores.png" alt="Flores iris mutantes del dataset" class="data-visualization-image" onclick="openModal(this.src, this.alt)">
+                <p class="image-caption">🌺 Así se ven las flores iris mutantes que estamos estudiando (Haz clic para ampliar)</p>
+            </div>
+        </div>
+
+        <div class="story-section" id="capitulo-2">
+            <h2>🔗 Capítulo 2: Las Conexiones Ocultas</h2>
+            
+            <div class="navigation-buttons">
+                <button class="nav-btn prev-btn" onclick="navigateToSection('capitulo-1')">← Capítulo 1</button>
+                <button class="nav-btn next-btn" onclick="navigateToSection('capitulo-3')">Capítulo 3 →</button>
+            </div>
+            <p>En este mundo distópico, las correlaciones entre las mutaciones son cruciales. Si una característica muta, ¿afecta a las otras? Esta información podría ser la clave para predecir futuras mutaciones.</p>
+            
+            <div class="image-container">
+                <img src="matriz_correlacion.png" alt="Matriz de correlación de mutaciones" class="analysis-image" onclick="openModal(this.src, this.alt)">
+                <p class="image-caption">🔗 Figura 2: Mapa de conexiones mutantes - ¿Cómo se relacionan las mutaciones entre sí? (Haz clic para ampliar)</p>
+            </div>
+
+            <div class="survival-tip">
+                <h4>💡 CONSEJO DE SUPERVIVENCIA #2</h4>
+                <p><strong>Interpreta los colores:</strong> Rojo intenso = correlación muy fuerte. Azul intenso = correlación negativa fuerte. Blanco = sin correlación. Las correlaciones fuertes indican que las mutaciones están sincronizadas.</p>
+            </div>
+        </div>
+
+        <div class="story-section" id="capitulo-3">
+            <h2>🧬 Capítulo 3: La Reducción Dimensional</h2>
+            
+            <div class="navigation-buttons">
+                <button class="nav-btn prev-btn" onclick="navigateToSection('capitulo-2')">← Capítulo 2</button>
+                <button class="nav-btn next-btn" onclick="navigateToSection('capitulo-4')">Capítulo 4 →</button>
+            </div>
+            <p>Con tantas mutaciones simultáneas, necesitamos simplificar. El Análisis de Componentes Principales (ACP) nos permite ver las mutaciones en solo 2 dimensiones, revelando patrones ocultos que podrían salvar vidas.</p>
+            
+            <div class="image-container">
+                <img src="screeplot_pca.png" alt="Análisis de componentes principales" class="analysis-image" onclick="openModal(this.src, this.alt)">
+                <p class="image-caption">🧬 Figura 3: El código genético simplificado - ¿Cuántas dimensiones necesitamos para entender las mutaciones? (Haz clic para ampliar)</p>
+            </div>
+
+            <div class="survival-tip">
+                <h4>💡 CONSEJO DE SUPERVIVENCIA #3</h4>
+                <p><strong>Observa la caída:</strong> Si la línea cae abruptamente después del componente 2, significa que solo necesitamos 2 dimensiones para entender el 95% de las mutaciones. Esto simplifica enormemente nuestro análisis.</p>
+            </div>
+        </div>
+
+        <div class="story-section" id="capitulo-4">
+            <h2>🤖 Capítulo 4: El Clustering de Supervivencia</h2>
+            
+            <div class="navigation-buttons">
+                <button class="nav-btn prev-btn" onclick="navigateToSection('capitulo-3')">← Capítulo 3</button>
+                <button class="nav-btn next-btn" onclick="navigateToSection('capitulo-5')">Capítulo 5 →</button>
+            </div>
+            <p>Sin saber las especies reales, el algoritmo K-means intenta agrupar las flores mutantes por similitud física. Es como intentar organizar supervivientes en un refugio sin conocer sus nombres.</p>
+            
+            <div class="image-container">
+                <img src="cluter.png" alt="Cluster Plot K-means" class="analysis-image" onclick="openModal(this.src, this.alt)">
+                <p class="image-caption">🤖 Figura 4: Grupos de supervivencia - ¿Cómo se organizan las flores mutantes por similitud? (Haz clic para ampliar)</p>
+            </div>
+
+            <div class="warning-distopian">
+                <ul>
+                    <li>Imagina que tienes que agrupar supervivientes solo mirando sus características físicas, sin saber sus nombres</li>
+                    <li>El modelo acertó el <strong>44.00%</strong> de las veces cuando comparamos con las especies reales</li>
+                </ul>
+            </div>
+            
+            <div class="info">
+                <h4 style="color: #ffffff; font-size: 1.5rem; margin-bottom: 1rem;">¿Por qué solo 44.00% de precisión?</h4>
+                <p style="color: #ffffff; font-size: 1.2rem; margin-bottom: 1rem;">El K-means agrupa las flores mutantes por similitud física, no por especie. Para calcular la precisión:</p>
+                <ol style="color: #ffffff; font-size: 1.1rem; margin-bottom: 1rem;">
+                    <li><strong>K-means encuentra 3 grupos</strong> basándose solo en las medidas (largo/ancho de sépalos y pétalos)</li>
+                    <li><strong>Mapeamos cada cluster a la especie más frecuente</strong> en ese grupo</li>
+                    <li><strong>Calculamos cuántas flores</strong> fueron clasificadas correctamente según este mapeo</li>
+                </ol>
+                <div class="highlight">
+                    <h5 style="color: #ffffff; font-size: 1.3rem; margin-bottom: 1rem;">Resultado del análisis de supervivencia:</h5>
+                    <ul style="color: #ffffff; font-size: 1.1rem;">
+                        <li><strong>Grupo 1:</strong> 50 setosas (100% correctas) - Las setosas son muy fáciles de identificar</li>
+                        <li><strong>Grupo 2:</strong> 39 versicolor + 14 virginica (39/53 = 74% correctas)</li>
+                        <li><strong>Grupo 3:</strong> 11 versicolor + 36 virginica (36/47 = 77% correctas)</li>
+                    </ul>
+                    <p style="color: #ffffff; font-size: 1.2rem; font-weight: 600;"><strong>Total:</strong> 66 de 150 flores (44.00%) clasificadas correctamente</p>
+                </div>
+                <p style="color: #ffffff; font-size: 1.2rem; font-style: italic;"><em>El mapeo manual de grupos a especies resulta en una precisión menor que el mapeo automático basado en la especie más frecuente.</em></p>
+            </div>
+        </div>
+
+        <div class="story-section" id="capitulo-5">
+            <h2 style="color: #ffffff; text-shadow: 0 0 15px rgba(255, 255, 255, 0.8); font-size: 2.5rem; font-weight: 700;">⚔️ Capítulo 5: Los Algoritmos de Supervivencia</h2>
+            <p>Ahora que sabemos las especies reales, probamos 6 algoritmos diferentes. Cada uno tiene su estrategia única para enfrentar las flores mutantes:</p>
+            
+            <div class="navigation-buttons">
+                <button class="nav-btn prev-btn" onclick="navigateToSection('capitulo-4')">← Capítulo 4</button>
+                <button class="nav-btn next-btn" onclick="navigateToSection('capitulo-6')">Capítulo 6 →</button>
+            </div>
+            
+            <div class="model-grid">
+                <div class="model-card">
+                    <h4>🌟 KNN - El Consultor de Vecinos</h4>
+                    <p>Pregunta a las flores más cercanas: "¿Qué especie eres?" y toma la decisión por mayoría.</p>
+                    <div class="example">
+                        <strong>Ejemplo:</strong> Si las 3 flores más cercanas son 2 setosas y 1 versicolor, clasifica como setosa.
+                    </div>
+                </div>
+                
+                <div class="model-card">
+                    <h4>📏 SVM - El Trazador de Fronteras</h4>
+                    <p>Dibuja líneas imaginarias para separar las especies mutantes en el espacio.</p>
+                    <div class="example">
+                        <strong>Ejemplo:</strong> Como un guardia que dibuja una línea en el suelo para separar dos grupos de supervivientes.
+                    </div>
+                </div>
+                
+                <div class="model-card">
+                    <h4>⚡ Naive Bayes - El Calculador de Probabilidades</h4>
+                    <p>Usa matemáticas para calcular qué especie es más probable basándose en las características.</p>
+                    <div class="example">
+                        <strong>Ejemplo:</strong> "Si tiene pétalos largos, hay 80% de probabilidad de que sea virginica."
+                    </div>
+                </div>
+                
+                <div class="model-card">
+                    <h4>🌳 Árbol de Decisión - El Juego de Preguntas</h4>
+                    <p>Hace preguntas paso a paso: "¿El pétalo es largo? Si sí, ¿es ancho? Si no..."</p>
+                    <div class="example">
+                        <strong>Ejemplo:</strong> Como un detective que hace preguntas específicas para identificar a un sospechoso.
+                    </div>
+                </div>
+                
+                <div class="model-card">
+                    <h4>🌲 Random Forest - El Consejo de Sabios</h4>
+                    <p>Varios árboles deciden juntos y toman la decisión por votación.</p>
+                    <div class="example">
+                        <strong>Ejemplo:</strong> Como un jurado donde cada miembro vota y se toma la decisión por mayoría.
+                    </div>
+                </div>
+                
+                <div class="model-card">
+                    <h4>🧠 Red Neuronal - El Cerebro Artificial</h4>
+                    <p>Imita cómo aprende el cerebro humano, conectando neuronas para reconocer patrones.</p>
+                    <div class="example">
+                        <strong>Ejemplo:</strong> Como un cerebro que aprende a reconocer rostros, pero en este caso reconoce flores.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="story-section" id="capitulo-6">
+            <h2>🏆 Capítulo 6: La Batalla Final</h2>
+            
+            <div class="navigation-buttons">
+                <button class="nav-btn prev-btn" onclick="navigateToSection('capitulo-5')">← Capítulo 5</button>
+                <button class="nav-btn next-btn" onclick="navigateToSection('capitulo-7')">Capítulo 7 →</button>
+            </div>
+            <p>Es hora de enfrentar a los algoritmos entre sí. ¿Cuál será el campeón de la clasificación de flores mutantes?</p>
+            
+            <h3>6.1 ⚔️ ¿Cómo decide cada algoritmo?</h3>
+            <p>Cada algoritmo tiene su estrategia única para enfrentar las flores mutantes:</p>
+            
+            <div class="dt-highlight-section">
+                <div class="dt-header">
+                    <h3>🌳 Árbol de Decisión: El Detective de Mutaciones</h3>
+                    <p class="dt-subtitle">Siguiendo el rastro de las flores mutantes paso a paso</p>
+                </div>
+                
+                <div class="dt-content">
+                    <div class="dt-explanation">
+                        <h4>🔍 ¿Cómo funciona el Árbol de Decisión?</h4>
+                        <p>El Árbol de Decisión es como un detective experto que hace preguntas específicas para identificar a un sospechoso. Cada pregunta divide las posibilidades en dos, hasta llegar a una conclusión definitiva sobre la especie de la flor mutante.</p>
+                        
+                        <div class="dt-features">
+                            <div class="dt-feature">
+                                <span class="dt-icon">❓</span>
+                                <strong>Preguntas Binarias:</strong> "¿Sí o No?" en cada nodo
+                            </div>
+                            <div class="dt-feature">
+                                <span class="dt-icon">🌿</span>
+                                <strong>División:</strong> Cada respuesta crea una nueva rama
+                            </div>
+                            <div class="dt-feature">
+                                <span class="dt-icon">🎯</span>
+                                <strong>Decisión Final:</strong> Llegar a una hoja con la respuesta
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="dt-visualization">
+                        <div class="image-container dt-image-container">
+                            <img src="arbol_decision.png" alt="Árbol de decisiones para supervivencia" class="analysis-image dt-image" onclick="openModal(this.src, this.alt)">
+                            <p class="image-caption dt-caption">🌳 El árbol de decisiones - El mapa de supervivencia paso a paso (Haz clic para ampliar)</p>
+                        </div>
+                        
+                        <div class="dt-insights">
+                            <h4>💡 El Camino de la Decisión</h4>
+                            <div class="decision-path">
+                                <div class="path-step">
+                                    <span class="step-number">1️⃣</span>
+                                    <strong>Primera Pregunta:</strong> "¿Petal.Length < 2.45?"
+                                </div>
+                                <div class="path-step">
+                                    <span class="step-number">2️⃣</span>
+                                    <strong>Si SÍ:</strong> → Es Setosa (100% seguro)
+                                </div>
+                                <div class="path-step">
+                                    <span class="step-number">3️⃣</span>
+                                    <strong>Si NO:</strong> → "¿Petal.Width < 1.75?"
+                                </div>
+                                <div class="path-step">
+                                    <span class="step-number">4️⃣</span>
+                                    <strong>Resultado:</strong> Versicolor o Virginica
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <h3>6.2 🎯 ¿Cuál es el más preciso?</h3>
+            <div class="image-container">
+                <img src="comparacion_accuracy.png" alt="Comparación de precisión entre algoritmos" class="analysis-image" onclick="openModal(this.src, this.alt)">
+                <p class="image-caption">🎯 Batalla de precisión - ¿Cuál algoritmo es el más efectivo contra las mutaciones? (Haz clic para ampliar)</p>
+            </div>
+
+            <h3>6.3 ⏱️ ¿Cuál es el más rápido?</h3>
+            <div class="image-container">
+                <img src="comparacion_tiempos.png" alt="Comparación de velocidad entre algoritmos" class="analysis-image" onclick="openModal(this.src, this.alt)">
+                <p class="image-caption">⏱️ Carrera contra el tiempo - ¿Cuál algoritmo responde más rápido a la amenaza? (Haz clic para ampliar)</p>
+            </div>
+        </div>
+
+        <div class="story-section">
+            <h2>🏆 El Campeón de la Clasificación</h2>
+            <div class="comparison-grid">
+                <div class="image-container">
+                    <img src="matriz_confusion_nn.png" alt="Matriz de confusión de la Red Neuronal" class="analysis-image" onclick="openModal(this.src, this.alt)">
+                    <p class="image-caption">🧠 Red Neuronal - El campeón indiscutible (96.67% precisión)</p>
+                </div>
+                
+                <div class="image-container">
+                    <img src="matriz_confusion_rf.png" alt="Matriz de confusión del Random Forest" class="analysis-image" onclick="openModal(this.src, this.alt)">
+                    <p class="image-caption">🌲 Random Forest - El subcampeón (93.33% precisión)</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="story-section" id="capitulo-7">
+            <h2>🔍 Capítulo 7: Los Secretos de las Mutaciones</h2>
+            
+            <div class="navigation-buttons">
+                <button class="nav-btn prev-btn" onclick="navigateToSection('capitulo-6')">← Capítulo 6</button>
+                <button class="nav-btn next-btn" onclick="navigateToSection('epilogo')">Epílogo →</button>
+            </div>
+            <p>El Random Forest nos revela qué características son más importantes para identificar las flores mutantes:</p>
+            
+            <div class="rf-highlight-section">
+                <div class="rf-header">
+                    <h3>🌲 Random Forest: El Decodificador de Mutaciones</h3>
+                    <p class="rf-subtitle">Descubriendo los patrones ocultos que salvan vidas</p>
+                </div>
+                
+                <div class="rf-content">
+                    <div class="rf-explanation">
+                        <h4>🎯 ¿Cómo funciona el Random Forest?</h4>
+                        <p>El Random Forest es como un consejo de sabios que toma decisiones juntos. Cada "árbol" en el bosque analiza las características de las flores mutantes y vota sobre su clasificación. Al final, se toma la decisión por mayoría.</p>
+                        
+                        <div class="rf-features">
+                            <div class="rf-feature">
+                                <span class="rf-icon">🌳</span>
+                                <strong>Múltiples Árboles:</strong> 250 árboles deciden juntos
+                            </div>
+                            <div class="rf-feature">
+                                <span class="rf-icon">🗳️</span>
+                                <strong>Votación:</strong> Cada árbol vota y se toma la mayoría
+                            </div>
+                            <div class="rf-feature">
+                                <span class="rf-icon">🔍</span>
+                                <strong>Importancia:</strong> Mide qué características son más cruciales
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="rf-visualization">
+                        <div class="image-container rf-image-container">
+                            <img src="importancia_variables_rf.png" alt="Importancia de variables en la clasificación" class="analysis-image rf-image" onclick="openModal(this.src, this.alt)">
+                            <p class="image-caption rf-caption">🔍 El código de las mutaciones - ¿Qué características son más importantes para la supervivencia? (Haz clic para ampliar)</p>
+                        </div>
+                        
+                        <div class="rf-insights">
+                            <h4>💡 Insights Clave</h4>
+                            <div class="insight-item">
+                                <span class="insight-rank">🥇</span>
+                                <strong>Largo del Pétalo:</strong> La característica más crucial (44.2%)
+                            </div>
+                            <div class="insight-item">
+                                <span class="insight-rank">🥈</span>
+                                <strong>Ancho del Pétalo:</strong> Segunda en importancia (42.1%)
+                            </div>
+                            <div class="insight-item">
+                                <span class="insight-rank">🥉</span>
+                                <strong>Largo del Sépalo:</strong> Tercera en relevancia (8.7%)
+                            </div>
+                            <div class="insight-item">
+                                <span class="insight-rank">4️⃣</span>
+                                <strong>Ancho del Sépalo:</strong> Menos relevante (5.0%)
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="story-section" id="epilogo">
+            <h2>🎭 Epílogo: El Futuro de la Humanidad</h2>
+            
+            <div class="navigation-buttons">
+                <button class="nav-btn prev-btn" onclick="navigateToSection('capitulo-7')">← Capítulo 7</button>
+                <button class="nav-btn home-btn" onclick="scrollToTop()">🏠 Inicio</button>
+            </div>
+            <div class="final-message">
+                <h3>🌟 Misión Cumplida</h3>
+                <p>Hemos logrado lo imposible. A través de la inteligencia artificial, hemos desarrollado un sistema capaz de clasificar las flores iris mutantes con una precisión del <strong>96.67%</strong>. La Red Neuronal se ha convertido en nuestro salvador.</p>
+                
+                <p>Los resultados nos muestran que:</p>
+                <ul>
+                    <li>🌺 <strong>La Red Neuronal</strong> es la más efectiva (96.67% precisión)</li>
+                    <li>🌲 <strong>El Random Forest</strong> es el más equilibrado (93.33% precisión, rápido)</li>
+                    <li>📏 <strong>El SVM</strong> es confiable y rápido (93.33% precisión)</li>
+                    <li>🌳 <strong>El Árbol de Decisión</strong> es interpretable (93.33% precisión)</li>
+                    <li>⚡ <strong>Naive Bayes</strong> es simple y efectivo (93.33% precisión)</li>
+                    <li>🌟 <strong>KNN</strong> es intuitivo pero menos preciso (90.00% precisión)</li>
+                </ul>
+                
+                <p><strong>La humanidad ha sobrevivido gracias a la inteligencia artificial.</strong> Las flores mutantes ya no son una amenaza, sino una oportunidad para el avance científico. El futuro está en nuestras manos, y la IA es nuestra aliada más poderosa.</p>
+                
+                <div class="ai-message">
+                    <h4>🤖 MENSAJE FINAL DEL CUFM-2157</h4>
+                    <p>"Misión completada. Las flores mutantes han sido clasificadas. La humanidad está a salvo. Pero recuerda: la verdadera victoria no es solo sobrevivir, sino aprender. Y hemos aprendido que la inteligencia artificial puede ser nuestra mayor aliada en tiempos de crisis."</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal para zoom de imágenes -->
+    <div id="imageModal" class="modal">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <img class="modal-content" id="modalImage">
+    </div>
+
+    <!-- Botón para subir al inicio -->
+    <button id="scrollToTop" class="scroll-to-top" onclick="scrollToTop()">
+        <span>↑</span>
+    </button>
+
+    <script>
+        // Modal para zoom de imágenes
+        function openModal(src, alt) {
+            var modal = document.getElementById("imageModal");
+            var modalImg = document.getElementById("modalImage");
+            modal.style.display = "block";
+            modalImg.src = src;
+            modalImg.alt = alt;
+        }
+
+        function closeModal() {
+            document.getElementById("imageModal").style.display = "none";
+        }
+
+        // Cerrar modal al hacer clic fuera de la imagen
+        window.onclick = function(event) {
+            var modal = document.getElementById("imageModal");
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+
+        // Scroll to top
+        function scrollToTop() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        }
+        
+            function scrollToContent() {
+        document.getElementById('content-start').scrollIntoView({
+            behavior: 'smooth'
+        });
+    }
+
+    function navigateToSection(sectionId) {
+        document.getElementById(sectionId).scrollIntoView({
+            behavior: 'smooth'
+        });
+    }
+
+        // Show/hide scroll to top button
+        window.onscroll = function() {
+            var scrollButton = document.getElementById('scrollToTop');
+            if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+                scrollButton.style.display = 'block';
+            } else {
+                scrollButton.style.display = 'none';
+            }
+        }
+        window.onload = function() {
+            var scrollButton = document.getElementById('scrollToTop');
+            if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+                scrollButton.style.display = 'block';
+            }
+        }
+    </script>
+</body>
+</html> 
