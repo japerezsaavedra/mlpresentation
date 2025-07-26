@@ -69,7 +69,7 @@ trabajoML/
 
 ## 🚀 Cómo Ver el Proyecto
 
-1. **Página Web:** [Ver el informe interactivo](https://[tu-usuario].github.io/[nombre-repositorio])
+1. **Página Web:** [Ver el informe interactivo](https://japerezsaavedra.github.io/mlpresentation)
 2. **Código R:** Ejecutar los scripts `.R` para regenerar los gráficos
 3. **Análisis:** Revisar el informe HTML para ver todos los resultados
 
